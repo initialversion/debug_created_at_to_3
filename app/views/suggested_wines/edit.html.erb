@@ -33,7 +33,7 @@
           User id from
         </label>
 
-        <input type="text" id="user_id_from" name="user_id_from" placeholder="User id from" class="form-control" value="<%= @suggested_wine.user_id_from %>">
+        <%= select_tag(:user_id_from, options_from_collection_for_select(User.all, :id, :created_at, @suggested_wine.user_id_from), :class => "form-control") %>
       </div>
 
       <!-- Label and input for user_id_to -->

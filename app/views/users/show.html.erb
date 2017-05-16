@@ -26,3 +26,158 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many my_wines -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        My Wines
+      </li>
+
+      <% @user.my_wines.each do |my_wine| %>
+        <li class="list-group-item">
+          <a href="/my_wines/<%= my_wine.id %>">
+            <%= my_wine.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/my_wines/<%= my_wine.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/my_wines/<%= my_wine.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_my_wine/<%= my_wine.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many wine_suggestions_from_friends -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Wine Suggestions From Friends
+      </li>
+
+      <% @user.wine_suggestions_from_friends.each do |suggested_wine| %>
+        <li class="list-group-item">
+          <a href="/suggested_wines/<%= suggested_wine.id %>">
+            <%= suggested_wine.wine_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/suggested_wines/<%= suggested_wine.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/suggested_wines/<%= suggested_wine.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_suggested_wine/<%= suggested_wine.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many my_suggestions_for_others -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        My Suggestions For Others
+      </li>
+
+      <% @user.my_suggestions_for_others.each do |suggested_wine| %>
+        <li class="list-group-item">
+          <a href="/suggested_wines/<%= suggested_wine.id %>">
+            <%= suggested_wine.wine_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/suggested_wines/<%= suggested_wine.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/suggested_wines/<%= suggested_wine.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_suggested_wine/<%= suggested_wine.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many reviews -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Reviews
+      </li>
+
+      <% @user.reviews.each do |review| %>
+        <li class="list-group-item">
+          <a href="/reviews/<%= review.id %>">
+            <%= review.stars %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/reviews/<%= review.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/reviews/<%= review.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_review/<%= review.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many bucket_list_wines -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Bucket List Wines
+      </li>
+
+      <% @user.bucket_list_wines.each do |bucket_list_wine| %>
+        <li class="list-group-item">
+          <a href="/bucket_list_wines/<%= bucket_list_wine.id %>">
+            <%= bucket_list_wine.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/bucket_list_wines/<%= bucket_list_wine.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/bucket_list_wines/<%= bucket_list_wine.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_bucket_list_wine/<%= bucket_list_wine.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

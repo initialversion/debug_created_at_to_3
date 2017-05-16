@@ -1,6 +1,7 @@
 class SuggestedWinesController < ApplicationController
   def index
-    @suggested_wines = SuggestedWine.page(params[:page]).per(10)
+    @q = SuggestedWine.ransack(params[:q])
+    @suggested_wines = @q.result(:distinct => true).includes(:wine, :user_id_to, :user_id_from).page(params[:page]).per(10)
 
     render("suggested_wines/index.html.erb")
   end

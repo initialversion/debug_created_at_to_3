@@ -1,6 +1,7 @@
 class TastingNoteTagsController < ApplicationController
   def index
-    @tasting_note_tags = TastingNoteTag.page(params[:page]).per(10)
+    @q = TastingNoteTag.ransack(params[:q])
+    @tasting_note_tags = @q.result(:distinct => true).includes(:wine_tag_pair).page(params[:page]).per(10)
 
     render("tasting_note_tags/index.html.erb")
   end

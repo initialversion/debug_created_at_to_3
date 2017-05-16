@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Wine_tag_pair resource:
+  # CREATE
+  get "/wine_tag_pairs/new", :controller => "wine_tag_pairs", :action => "new"
+  post "/create_wine_tag_pair", :controller => "wine_tag_pairs", :action => "create"
+
+  # READ
+  get "/wine_tag_pairs", :controller => "wine_tag_pairs", :action => "index"
+  get "/wine_tag_pairs/:id", :controller => "wine_tag_pairs", :action => "show"
+
+  # UPDATE
+  get "/wine_tag_pairs/:id/edit", :controller => "wine_tag_pairs", :action => "edit"
+  post "/update_wine_tag_pair/:id", :controller => "wine_tag_pairs", :action => "update"
+
+  # DELETE
+  get "/delete_wine_tag_pair/:id", :controller => "wine_tag_pairs", :action => "destroy"
+  #------------------------------
+
   # Routes for the Varietal resource:
   # CREATE
   get "/varietals/new", :controller => "varietals", :action => "new"

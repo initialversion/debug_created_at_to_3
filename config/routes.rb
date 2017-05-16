@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Suggested_wine resource:
+  # CREATE
+  get "/suggested_wines/new", :controller => "suggested_wines", :action => "new"
+  post "/create_suggested_wine", :controller => "suggested_wines", :action => "create"
+
+  # READ
+  get "/suggested_wines", :controller => "suggested_wines", :action => "index"
+  get "/suggested_wines/:id", :controller => "suggested_wines", :action => "show"
+
+  # UPDATE
+  get "/suggested_wines/:id/edit", :controller => "suggested_wines", :action => "edit"
+  post "/update_suggested_wine/:id", :controller => "suggested_wines", :action => "update"
+
+  # DELETE
+  get "/delete_suggested_wine/:id", :controller => "suggested_wines", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tasting_note_tag resource:
   # CREATE
   get "/tasting_note_tags/new", :controller => "tasting_note_tags", :action => "new"

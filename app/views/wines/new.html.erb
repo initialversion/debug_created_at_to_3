@@ -51,7 +51,7 @@
           Varietal
         </label>
 
-        <input type="text" id="varietal_id" name="varietal_id" placeholder="Varietal" class="form-control" value="<%= @wine.varietal_id %>">
+        <%= select_tag(:varietal_id, options_from_collection_for_select(Varietal.all, :id, :varietal_name, @wine.varietal_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for winery -->

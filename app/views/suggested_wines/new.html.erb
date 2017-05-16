@@ -42,7 +42,7 @@
           User id to
         </label>
 
-        <input type="text" id="user_id_to" name="user_id_to" placeholder="User id to" class="form-control" value="<%= @suggested_wine.user_id_to %>">
+        <%= select_tag(:user_id_to, options_from_collection_for_select(User.all, :id, :created_at, @suggested_wine.user_id_to), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">

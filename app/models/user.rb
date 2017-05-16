@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :my_suggestions_for_others,
+             :class_name => "SuggestedWine",
+             :foreign_key => "user_id_from",
+             :dependent => :destroy
+
   has_many   :wine_suggestions_from_friends,
              :class_name => "SuggestedWine",
              :foreign_key => "user_id_to",

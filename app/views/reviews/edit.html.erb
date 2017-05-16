@@ -36,14 +36,8 @@
         <input type="text" id="review_full_text" name="review_full_text" placeholder="Review full text" class="form-control" value="<%= @review.review_full_text %>">
       </div>
 
-      <!-- Label and input for user_id -->
-      <div class="form-group">
-        <label for="user_id" class="control-label">
-          User
-        </label>
-
-        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :created_at, @review.user_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for wine_id -->
       <div class="form-group">

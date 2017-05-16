@@ -10,7 +10,7 @@ class MyWinesController < ApplicationController
   end
 
   def index
-    @my_wines = MyWine.all
+    @my_wines = current_user.my_wines.page(params[:page]).per(10)
 
     render("my_wines/index.html.erb")
   end

@@ -20,7 +20,7 @@
       <tr>
         <td><%= review.stars %></td>
         <td><%= review.review_full_text %></td>
-        <td><%= review.user_id %></td>
+        <td><%= review.user.created_at %></td>
         <td><%= review.wine_id %></td>
         <td>
           <a href="/reviews/<%= review.id %>" class="btn btn-primary">Show</a>

@@ -17,9 +17,27 @@
 
       <% @suggested_wines.each do |suggested_wine| %>
       <tr>
-        <td><%= suggested_wine.wine.wine_name %></td>
-        <td><%= suggested_wine.user_id_from.created_at %></td>
-        <td><%= suggested_wine.user_id_to.created_at %></td>
+        <td>
+          <% if suggested_wine.wine.present? %>
+            <a href="/wines/<%= suggested_wine.wine.id %>">
+              <%= suggested_wine.wine.wine_name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if suggested_wine.user_id_from.present? %>
+            <a href="/users/<%= suggested_wine.user_id_from.id %>">
+              <%= suggested_wine.user_id_from.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if suggested_wine.user_id_to.present? %>
+            <a href="/users/<%= suggested_wine.user_id_to.id %>">
+              <%= suggested_wine.user_id_to.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/suggested_wines/<%= suggested_wine.id %>" class="btn btn-primary">Show</a>
           <a href="/suggested_wines/<%= suggested_wine.id %>/edit" class="btn btn-warning">Edit</a>

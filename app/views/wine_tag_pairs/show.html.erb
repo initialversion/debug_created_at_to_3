@@ -9,7 +9,13 @@
       <dd><%= @wine_tag_pair.wine_id %></dd>
 
       <dt>Tag</dt>
-      <dd><%= @wine_tag_pair.tag_id %></dd>
+      <dd>
+        <% if @wine_tag_pair.tag.present? %>
+          <a href="/wines/<%= @wine_tag_pair.tag_id %>">
+            <%= @wine_tag_pair.tag.wine_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

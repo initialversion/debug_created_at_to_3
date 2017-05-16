@@ -17,7 +17,13 @@
       <% @wine_tag_pairs.each do |wine_tag_pair| %>
       <tr>
         <td><%= wine_tag_pair.wine_id %></td>
-        <td><%= wine_tag_pair.tag.wine_name %></td>
+        <td>
+          <% if wine_tag_pair.tag.present? %>
+            <a href="/wines/<%= wine_tag_pair.tag.id %>">
+              <%= wine_tag_pair.tag.wine_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/wine_tag_pairs/<%= wine_tag_pair.id %>" class="btn btn-primary">Show</a>
           <a href="/wine_tag_pairs/<%= wine_tag_pair.id %>/edit" class="btn btn-warning">Edit</a>

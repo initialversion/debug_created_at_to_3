@@ -16,8 +16,20 @@
 
       <% @my_wines.each do |my_wine| %>
       <tr>
-        <td><%= my_wine.user.created_at %></td>
-        <td><%= my_wine.wine.wine_name %></td>
+        <td>
+          <% if my_wine.user.present? %>
+            <a href="/users/<%= my_wine.user.id %>">
+              <%= my_wine.user.created_at %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if my_wine.wine.present? %>
+            <a href="/wines/<%= my_wine.wine.id %>">
+              <%= my_wine.wine.wine_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/my_wines/<%= my_wine.id %>" class="btn btn-primary">Show</a>
           

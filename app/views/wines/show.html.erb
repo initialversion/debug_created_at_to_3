@@ -15,7 +15,13 @@
       <dd><%= @wine.price %></dd>
 
       <dt>Varietal</dt>
-      <dd><%= @wine.varietal_id %></dd>
+      <dd>
+        <% if @wine.varietal.present? %>
+          <a href="/varietals/<%= @wine.varietal_id %>">
+            <%= @wine.varietal.varietal_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Winery</dt>
       <dd><%= @wine.winery %></dd>

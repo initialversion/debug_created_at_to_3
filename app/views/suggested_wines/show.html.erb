@@ -6,13 +6,31 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Wine</dt>
-      <dd><%= @suggested_wine.wine_id %></dd>
+      <dd>
+        <% if @suggested_wine.wine.present? %>
+          <a href="/wines/<%= @suggested_wine.wine_id %>">
+            <%= @suggested_wine.wine.wine_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User id from</dt>
-      <dd><%= @suggested_wine.user_id_from %></dd>
+      <dd>
+        <% if @suggested_wine.user_id_from.present? %>
+          <a href="/users/<%= @suggested_wine.user_id_from %>">
+            <%= @suggested_wine.user_id_from.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>User id to</dt>
-      <dd><%= @suggested_wine.user_id_to %></dd>
+      <dd>
+        <% if @suggested_wine.user_id_to.present? %>
+          <a href="/users/<%= @suggested_wine.user_id_to %>">
+            <%= @suggested_wine.user_id_to.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

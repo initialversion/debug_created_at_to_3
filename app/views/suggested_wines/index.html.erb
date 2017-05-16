@@ -19,7 +19,7 @@
       <tr>
         <td><%= suggested_wine.wine.wine_name %></td>
         <td><%= suggested_wine.user_id_from.created_at %></td>
-        <td><%= suggested_wine.user_id_to %></td>
+        <td><%= suggested_wine.user_id_to.created_at %></td>
         <td>
           <a href="/suggested_wines/<%= suggested_wine.id %>" class="btn btn-primary">Show</a>
           <a href="/suggested_wines/<%= suggested_wine.id %>/edit" class="btn btn-warning">Edit</a>

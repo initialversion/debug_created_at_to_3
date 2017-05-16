@@ -1,6 +1,6 @@
 class TastingNoteTagsController < ApplicationController
   def index
-    @tasting_note_tags = TastingNoteTag.all
+    @tasting_note_tags = TastingNoteTag.page(params[:page]).per(10)
 
     render("tasting_note_tags/index.html.erb")
   end

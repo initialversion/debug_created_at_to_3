@@ -1,6 +1,6 @@
 class VarietalsController < ApplicationController
   def index
-    @varietals = Varietal.all
+    @varietals = Varietal.page(params[:page]).per(10)
 
     render("varietals/index.html.erb")
   end

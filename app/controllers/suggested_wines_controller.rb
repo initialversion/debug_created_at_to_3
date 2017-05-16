@@ -1,6 +1,6 @@
 class SuggestedWinesController < ApplicationController
   def index
-    @suggested_wines = SuggestedWine.all
+    @suggested_wines = SuggestedWine.page(params[:page]).per(10)
 
     render("suggested_wines/index.html.erb")
   end

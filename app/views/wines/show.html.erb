@@ -63,6 +63,41 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_review" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for stars -->
+      <div class="form-group">
+        <label for="stars" class="control-label">
+          Stars
+        </label>
+
+        <input type="text" id="stars" name="stars" placeholder="Stars" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for review_full_text -->
+      <div class="form-group">
+        <label for="review_full_text" class="control-label">
+          Review full text
+        </label>
+
+        <input type="text" id="review_full_text" name="review_full_text" placeholder="Review full text" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Review
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -94,6 +129,23 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_bucket_list_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Bucket List Wine
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -125,6 +177,32 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_suggested_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <!-- Label and input for user_id_from -->
+      <input type="hidden" name="user_id_from" value="<%= current_user.id %>">
+
+      <!-- Label and input for user_id_to -->
+      <div class="form-group">
+        <label for="user_id_to" class="control-label">
+          User id to
+        </label>
+
+        <%= select_tag(:user_id_to, options_from_collection_for_select(User.all, :id, :created_at, :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Suggested Wine
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -156,6 +234,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_wine_tag_pair" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for wine_id -->
+      <div class="form-group">
+        <label for="wine_id" class="control-label">
+          Wine
+        </label>
+
+        <input type="text" id="wine_id" name="wine_id" placeholder="Wine" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for tag_id -->
+      <div class="form-group">
+        <label for="tag_id" class="control-label">
+          Tag
+        </label>
+
+        <%= select_tag(:tag_id, options_from_collection_for_select(Wine.all, :id, :wine_name, :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Wine Tag Pair
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -187,6 +294,23 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_my_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for user_id -->
+      <input type="hidden" name="user_id" value="<%= current_user.id %>">
+
+      <!-- Label and input for wine_id -->
+      <input type="hidden" name="wine_id" value="<%= @wine.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create My Wine
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

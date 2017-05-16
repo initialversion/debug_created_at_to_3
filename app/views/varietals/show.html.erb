@@ -51,6 +51,56 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_wine" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for wine_name -->
+      <div class="form-group">
+        <label for="wine_name" class="control-label">
+          Wine name
+        </label>
+
+        <input type="text" id="wine_name" name="wine_name" placeholder="Wine name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for year -->
+      <div class="form-group">
+        <label for="year" class="control-label">
+          Year
+        </label>
+
+        <input type="text" id="year" name="year" placeholder="Year" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for varietal_id -->
+      <input type="hidden" name="varietal_id" value="<%= @varietal.id %>">
+
+      <!-- Label and input for winery -->
+      <div class="form-group">
+        <label for="winery" class="control-label">
+          Winery
+        </label>
+
+        <input type="text" id="winery" name="winery" placeholder="Winery" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Wine
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

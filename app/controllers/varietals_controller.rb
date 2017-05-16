@@ -6,6 +6,7 @@ class VarietalsController < ApplicationController
   end
 
   def show
+    @wine = Wine.new
     @varietal = Varietal.find(params[:id])
 
     render("varietals/show.html.erb")

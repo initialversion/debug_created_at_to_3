@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Varietal resource:
+  # CREATE
+  get "/varietals/new", :controller => "varietals", :action => "new"
+  post "/create_varietal", :controller => "varietals", :action => "create"
+
+  # READ
+  get "/varietals", :controller => "varietals", :action => "index"
+  get "/varietals/:id", :controller => "varietals", :action => "show"
+
+  # UPDATE
+  get "/varietals/:id/edit", :controller => "varietals", :action => "edit"
+  post "/update_varietal/:id", :controller => "varietals", :action => "update"
+
+  # DELETE
+  get "/delete_varietal/:id", :controller => "varietals", :action => "destroy"
+  #------------------------------
+
   # Routes for the Review resource:
   # CREATE
   get "/reviews/new", :controller => "reviews", :action => "new"

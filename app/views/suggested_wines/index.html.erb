@@ -17,7 +17,7 @@
 
       <% @suggested_wines.each do |suggested_wine| %>
       <tr>
-        <td><%= suggested_wine.wine_id %></td>
+        <td><%= suggested_wine.wine.wine_name %></td>
         <td><%= suggested_wine.user_id_from %></td>
         <td><%= suggested_wine.user_id_to %></td>
         <td>

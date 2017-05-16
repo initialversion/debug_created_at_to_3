@@ -1,6 +1,9 @@
 class Wine < ApplicationRecord
   # Direct associations
 
+  belongs_to :varietal,
+             :counter_cache => true
+
   has_many   :my_wines,
              :dependent => :destroy
 

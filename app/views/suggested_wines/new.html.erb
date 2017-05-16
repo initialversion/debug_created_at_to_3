@@ -28,13 +28,7 @@
       </div>
 
       <!-- Label and input for user_id_from -->
-      <div class="form-group">
-        <label for="user_id_from" class="control-label">
-          User id from
-        </label>
-
-        <%= select_tag(:user_id_from, options_from_collection_for_select(User.all, :id, :created_at, @suggested_wine.user_id_from), :class => "form-control") %>
-      </div>
+      <input type="hidden" name="user_id_from" value="<%= current_user.id %>">
 
       <!-- Label and input for user_id_to -->
       <div class="form-group">

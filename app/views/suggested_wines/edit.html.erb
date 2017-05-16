@@ -27,14 +27,8 @@
         <%= select_tag(:wine_id, options_from_collection_for_select(Wine.all, :id, :wine_name, @suggested_wine.wine_id), :class => "form-control") %>
       </div>
 
-      <!-- Label and input for user_id_from -->
-      <div class="form-group">
-        <label for="user_id_from" class="control-label">
-          User id from
-        </label>
-
-        <%= select_tag(:user_id_from, options_from_collection_for_select(User.all, :id, :created_at, @suggested_wine.user_id_from), :class => "form-control") %>
-      </div>
+      
+      
 
       <!-- Label and input for user_id_to -->
       <div class="form-group">

@@ -47,8 +47,6 @@ class MyWinesController < ApplicationController
 
   def update
     @my_wine = MyWine.find(params[:id])
-
-    @my_wine.user_id = params[:user_id]
     @my_wine.wine_id = params[:wine_id]
 
     save_status = @my_wine.save

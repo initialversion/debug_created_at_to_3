@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   root :to => "my_wines#index"
   # Routes for the Wine_tag_pair resource:
   # CREATE

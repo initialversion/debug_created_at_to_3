@@ -22,7 +22,7 @@
         <td><%= wine.wine_name %></td>
         <td><%= wine.year %></td>
         <td><%= wine.price %></td>
-        <td><%= wine.varietal_id %></td>
+        <td><%= wine.varietal.varietal_name %></td>
         <td><%= wine.winery %></td>
         <td>
           <a href="/wines/<%= wine.id %>" class="btn btn-primary">Show</a>

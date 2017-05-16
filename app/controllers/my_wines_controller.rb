@@ -1,4 +1,14 @@
 class MyWinesController < ApplicationController
+  before_action :current_user_must_be_my_wine_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_my_wine_user
+    my_wine = MyWine.find(params[:id])
+
+    unless current_user == my_wine.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @my_wines = MyWine.all
 

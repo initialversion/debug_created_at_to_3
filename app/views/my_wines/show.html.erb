@@ -17,12 +17,14 @@
       <a href="/my_wines" class="btn btn-primary">
         Back
       </a>
-      <a href="/my_wines/<%= @my_wine.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_my_wine/<%= @my_wine.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @my_wine.user %>
+        <a href="/my_wines/<%= @my_wine.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_my_wine/<%= @my_wine.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>

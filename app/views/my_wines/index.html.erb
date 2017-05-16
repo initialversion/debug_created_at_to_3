@@ -20,8 +20,11 @@
         <td><%= my_wine.wine.wine_name %></td>
         <td>
           <a href="/my_wines/<%= my_wine.id %>" class="btn btn-primary">Show</a>
-          <a href="/my_wines/<%= my_wine.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_my_wine/<%= my_wine.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == my_wine.user %>
+            <a href="/my_wines/<%= my_wine.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_my_wine/<%= my_wine.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

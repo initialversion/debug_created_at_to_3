@@ -17,7 +17,7 @@
       <% @my_wines.each do |my_wine| %>
       <tr>
         <td><%= my_wine.user.created_at %></td>
-        <td><%= my_wine.wine_id %></td>
+        <td><%= my_wine.wine.wine_name %></td>
         <td>
           <a href="/my_wines/<%= my_wine.id %>" class="btn btn-primary">Show</a>
           <a href="/my_wines/<%= my_wine.id %>/edit" class="btn btn-warning">Edit</a>
